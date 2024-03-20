@@ -19,7 +19,7 @@ describe('mudança de senha', () => {
       
     })
 
-    it.only('O sistema deve ser capaz de cadastrar um cliente', () => {
+    it('O sistema deve ser capaz de cadastrar um cliente', () => {
         cy.login(login, oldPassword);
         cy.registerCustomer();
 
