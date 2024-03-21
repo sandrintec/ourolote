@@ -1,9 +1,10 @@
 //import { faker } from '@faker-js/faker'
+
 describe('mudança de senha', () => {
     const login = Cypress.env("username");
     const oldPassword = Cypress.env("password");
     const newPassword = Cypress.env("newPassword");
-    const registerCustomer = ('');
+    //const registerCustomer = ('');
 
     
   
@@ -19,12 +20,13 @@ describe('mudança de senha', () => {
       
     })
 
-    it('O sistema deve ser capaz de cadastrar um cliente', () => {
+    it.only('O sistema deve ser capaz de cadastrar um cliente', () => {
         cy.login(login, oldPassword);
-        cy.registerCustomer();
-
-    
-        
+        //cy.registerCustomer();
+        Cypress._.times(3, () => {
+            cy.registerCustomer();
+            
+        });
     })
 
   })

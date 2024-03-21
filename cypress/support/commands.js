@@ -37,10 +37,13 @@ Cypress.Commands.add('login', (login, password) => {
   
   })
 
+  const faker = require('faker');
+
   Cypress.Commands.add('registerCustomer', () => {
-    
+    cy.visit('https://ourolote.com.br/clientes/');
     cy.get('[href="/clientes/"]').click();
     cy.get('[href="/cliente/create/"]').click();
-    cy.get('[name="nome"]').type('Luis Sandro');
-    cy.get('[name="telefone"]').type('89999187721');
+    cy.get('[name="nome"]').type(faker.name.findName());
+    //cy.get('#cpf').type(faker.br.cpf());
+    cy.get('[name="telefone"]').type(faker.phone.phoneNumber());
   })
