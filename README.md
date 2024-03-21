@@ -28,11 +28,11 @@ Aqui estão os cenários de teste para cada funcionalidade:
 ### Cadastro bem-sucedido de um novo cliente
 
 Passos:
-1- O teste roda por três vezes.
-2- Para cada rodada, um cadastro aleatório de cliente é realizado com informações únicas.
-3- Os campos obrigatórios são preenchidos corretamente.
-4- Após o cadastro, os detalhes do cliente são verificados para garantir que foram corretamente salvos no sistema.
-5- O sistema confirma o sucesso do cadastro exibindo uma mensagem ou redirecionando para a página de perfil do cliente.
+- O teste roda por três vezes.
+- Para cada rodada, um cadastro aleatório de cliente é realizado com informações únicas.
+- Os campos obrigatórios são preenchidos corretamente.
+- Após o cadastro, os detalhes do cliente são verificados para garantir que foram corretamente salvos no sistema.
+- O sistema confirma o sucesso do cadastro exibindo uma mensagem ou redirecionando para a página de perfil do cliente.
 
 Este cenário de teste verifica se o sistema é capaz de lidar com múltiplos cadastros de clientes de forma adequada, garantindo que as informações fornecidas sejam corretamente armazenadas e que o processo de cadastro seja concluído com sucesso.
 
