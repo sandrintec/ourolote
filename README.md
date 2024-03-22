@@ -27,16 +27,12 @@ Aqui estão os cenários de teste para cada funcionalidade:
 
 ### Cadastro bem-sucedido de um novo cliente
 
-Passos:
-- O teste roda por três vezes.
-- Para cada rodada, um cadastro aleatório de cliente é realizado com informações únicas.
-- Os campos obrigatórios são preenchidos corretamente.
-- Após o cadastro, os detalhes do cliente são verificados para garantir que foram corretamente salvos no sistema.
-- O sistema confirma o sucesso do cadastro exibindo uma mensagem ou redirecionando para a página de perfil do cliente.
+Este teste automatizado visa verificar o sucesso do processo de cadastro de um novo cliente em sua aplicação. O teste segue os seguintes passos:
+- Login no Sistema: O teste realiza o login no sistema utilizando credenciais válidas.
+- Acesso à Página de Cadastro: Após o login, ele navega para a página de cadastro de clientes.
+- Cadastro de Cliente Aleatório: Utilizando o Faker.js, o teste preenche os campos obrigatórios do formulário de cadastro com informações aleatórias, como nome, CPF e telefone, a cada execução.
 
-Este cenário de teste verifica se o sistema é capaz de lidar com múltiplos cadastros de clientes de forma adequada, garantindo que as informações fornecidas sejam corretamente armazenadas e que o processo de cadastro seja concluído com sucesso.
-
-## Sugestões de Melhorias
+## Sugestões de Melhorias para o cenário de Login e Logout
 
 - Implementar uma mensagem de erro para login com senha incorreta.
 - Adicionar mais casos de teste para diferentes cenários de mudança de senha.
