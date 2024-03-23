@@ -3,6 +3,8 @@ Cypress.Commands.add('login', (login, password) => {
     cy.get('#id_username').type(login);
     cy.get('#id_password').type(password);
     cy.get('[type="submit"]').click();
+    cy.url().should('include', 'https://ourolote.com.br/');
+    cy.get('.alert-success').should('not.exist');
   })
   
   Cypress.Commands.add('changePassword', (oldPassword, newPassword) => {
@@ -14,7 +16,7 @@ Cypress.Commands.add('login', (login, password) => {
     cy.get('[name="new_password1"]').type(newPassword);
     cy.get('[name="new_password2"]').type(newPassword);
     cy.get('[type="submit"]').click();
-
+    cy.get('.alert-success').should('be.visible').and('contain', 'Senha alterada com sucesso!');
       
 
   })
@@ -23,6 +25,9 @@ Cypress.Commands.add('login', (login, password) => {
     //fazer logout
     cy.get('.text-gray-600').click();
     cy.get('[href="/accounts/logout/"]').click();
+    cy.get('.alert-success').should('not.exist');
+    cy.url().should('include', 'https://ourolote.com.br/accounts/login/');
+
 
   })
 
@@ -34,6 +39,7 @@ Cypress.Commands.add('login', (login, password) => {
     cy.get('[name="new_password1"]').type(oldPassword);
     cy.get('[name="new_password2"]').type(oldPassword);
     cy.get('[type="submit"]').click();
+    cy.get('.alert-success').should('be.visible').and('contain', 'Senha alterada com sucesso!');
   
   })
 

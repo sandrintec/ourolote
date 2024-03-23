@@ -7,6 +7,7 @@ describe('mudança de senha', () => {
     it('mudar a senha com sucesso', () => {
         cy.login(login, oldPassword);
         cy.changePassword(oldPassword, newPassword);
+
         cy.logout();
         cy.login(login, newPassword);
         cy.changePassword2(newPassword, oldPassword);
