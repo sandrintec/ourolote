@@ -55,7 +55,8 @@ Cypress.Commands.add('login', (login, password) => {
     cy.get('[name="nome"]').type(nome);
     cy.get('[name="cpf"]').type(cpf);
     cy.get('[name="telefone"]').type(telefone);
-    //cy.get('[type="submit"]').click();
+    cy.get('[type="submit"]').click();
+    cy.url().should('include', '/clientes');
   })
 
 
@@ -70,6 +71,7 @@ Cypress.Commands.add('login', (login, password) => {
     cy.get('select#cliente').select('sandro santos', {force: true});
     cy.get('#id_data').type(formattedDate);
     cy.get('form > .btn > .text-white').click();
+    cy.url().should('include', '/lote/359');
 
   })
   // O sistema faz um parcelamento da venda
@@ -82,13 +84,12 @@ Cypress.Commands.add('login', (login, password) => {
     cy.get('[name="qtd_parcelas_restantes"]').type(qtdParcelasRestante)
     cy.get('[name="data_primeira_parcela_restante"]').type(formattedDate2);
     cy.get('form > .btn > .text-white').click();
-
-    cy.wait(10000);
+    cy.url().should('include', '/lote/359');
     
   })
   // O sistema exclui a venda
   Cypress.Commands.add('deleteSale', (oldPassword) => {
-    cy.get('.card-body > .btn > .text-white').click();
+    cy.get('.card-body > .btn-danger').click();
     cy.get('.form-control').type(oldPassword);
     cy.get('[type="submit"]').click();
   })

@@ -33,7 +33,7 @@ describe('mudança de senha', () => {
       
     })
 
-    it.only('O sistema deve ser capaz de cadastrar um cliente', () => {
+    it('O sistema deve ser capaz de cadastrar um cliente', () => {
         cy.login(login, oldPassword);
         cy.registerCustomer(nome, cpf, telefone);
         
@@ -44,7 +44,7 @@ describe('mudança de senha', () => {
         cy.sellProduct(formattedDate);
     })
 
-    it('O cliente deve ser capaz de parcelar a compra', () => {
+    it.only('O cliente deve ser capaz de parcelar a compra', () => {
         cy.login(login, oldPassword);
         cy.payinInstallments(valorEntrada, qtdParcelasEntrada, formattedDate, qtdParcelasRestante, formattedDate2);
 
