@@ -83,7 +83,7 @@ Cypress.Commands.add('login', (login, password) => {
     cy.get('[name="data_primeira_parcela_restante"]').type(formattedDate2);
     cy.get('form > .btn > .text-white').click();
 
-    cy.wait(20000);
+    cy.wait(10000);
     
   })
   // O sistema exclui a venda
